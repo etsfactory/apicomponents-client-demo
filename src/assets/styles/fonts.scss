@@ -1,0 +1,64 @@
+/* Heading */
+@mixin font-heading-xl {
+  font-size: 80px;
+  font-weight: 600;
+}
+@mixin font-heading-l {
+  font-size: 32px;
+  font-weight: 600;
+}
+@mixin font-heading-s {
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Highlight */
+@mixin font-highlight-l {
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+@mixin font-highlight-m {
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+@mixin font-highlight-s {
+  font-weight: 600;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+/* Paragraph */
+@mixin font-paragraph-m {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.25;
+}
+@mixin font-paragraph-s {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+}
+@mixin font-paragraph-xs {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.25;
+}
+
+/* Tables */
+@mixin font-content-table-m {
+  font-weight: 400;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+/*data*/
+@mixin font-data-l {
+  font-family: Oswald;
+  font-size: 24px;
+  line-height: 1.5;
+  text-transform: uppercase;
+}

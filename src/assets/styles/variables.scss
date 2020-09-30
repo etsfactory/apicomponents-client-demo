@@ -1,0 +1,10 @@
+$square-size: 140px;
+$content-padding: 60px;
+
+@mixin states {
+  &:hover,
+  &:active,
+  &:focus {
+    @content;
+  }
+}
