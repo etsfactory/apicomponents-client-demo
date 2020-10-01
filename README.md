@@ -1,6 +1,16 @@
 # apicomponents-client-demo
 
+Demo project for testing api components.
 
+## Authentication
+In order to consume components from apicomponents, include valid params in `.env` file:
+```
+// Server where apicomponents are hosted
+VUE_APP_APICOMPONENTS_HOST="https://xxxxxxx.xxx"
+
+// Valid token for consuming components
+VUE_APP_APICOMPONENTS_TOKEN="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+```
 
 ## Project setup
 ```
