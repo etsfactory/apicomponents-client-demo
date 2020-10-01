@@ -12,6 +12,16 @@ VUE_APP_APICOMPONENTS_HOST="https://xxxxxxx.xxx"
 VUE_APP_APICOMPONENTS_TOKEN="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 ```
 
+## Environment setup
+
+Install the last stable version of `node.js`.
+
+Then, install `vue-cli` globally.
+
+```
+npm install -g @vue/cli
+```
+
 ## Project setup
 ```
 npm install
