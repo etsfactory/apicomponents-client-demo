@@ -1,6 +1,6 @@
 <template>
   <main class="main">
-    <section :class="{ result: ['assessment-result', 'proposal-result'].includes($route.name) }" class="content">
+    <section>
       <transition name="fade">
         <router-view />
       </transition>
@@ -65,16 +65,5 @@ input {
   width: 100vw;
   overflow: hidden;
   position: relative;
-}
-.content {
-  position: relative;
-  margin-top: $square-size;
-  margin-left: $square-size;
-  width: calc(100vw - #{$square-size});
-  height: calc(100vh - #{$square-size});
-  &.result {
-    margin-top: 0;
-    height: 100vh;
-  }
 }
 </style>

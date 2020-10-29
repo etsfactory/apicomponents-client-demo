@@ -20,6 +20,7 @@
 
 <script>
 import gsap from "gsap";
+
 export default {
   mounted() {
     const duration = 0.5;

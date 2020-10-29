@@ -4,7 +4,7 @@
       <app-spinner class="spinner" />
       <h3 class="spinner-title">realizando diagnóstico de tu cartera</h3>
     </div>
-    <cr-component ref="assessment" name="assessment" @loaded="onAssessmentCreated" />
+    <cr-component ref="assessment" name="assessment" @loaded="onAssessmentCreated" @change="assessmentChanged" />
   </div>
 </template>
 
@@ -40,7 +40,7 @@ export default {
   mounted() {
     this.$refs.assessment.load({
       assetsAmounts: this.assessment.portfolio,
-      filter: this.assessment.filter,
+      filter: this.assessment.resultFilter,
       fees: this.fees
     });
   },
@@ -49,6 +49,18 @@ export default {
     onAssessmentCreated(e) {
       this.assessing = false;
       this.setAssessmentId(e.target.data.assessment.assessmentId);
+    },
+    assessmentChanged(e) {
+      const newSymbols = e.detail;
+      if (this.$refs.assessment) {
+        this.assessing = true;
+        this.$refs.assessment.load({
+          assetsAmounts: this.assessment.portfolio,
+          filter: this.assessment.resultFilter,
+          fees: this.fees,
+          restrictions: newSymbols
+        });
+      }
     }
   }
 };

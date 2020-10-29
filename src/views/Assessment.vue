@@ -19,10 +19,10 @@
         <app-button class="button-add" text="Añadir fondo" size="small" :disabled="!addFundValidator" @click="addSymbol" />
       </div>
       <cr-component v-if="portfolio.length" class="portfolio" ref="portfolioTable" name="portfolio-table" @change="updatePortfolio" />
-      <app-square v-else class="no-symbols-selected">
+      <div v-else class="no-symbols-selected">
         <app-icon icon="warning" class="warning-icon" />
         <span class="warning-message">Aún no tienes ningún fondo seleccionado.</span>
-      </app-square>
+      </div>
       <div v-if="portfolio.length" class="buttons">
         <app-button text="Borrar cartera" @click="clearPortfolio" />
         <app-button text="Realizar diagnóstico" to="/assessment/result" />
@@ -37,13 +37,11 @@ import debounce from "lodash.debounce";
 import AppHeader from "@/components/AppHeader";
 import AppInput from "@/components/AppInput";
 import AppButton from "@/components/AppButton";
-import AppSquare from "@/components/AppSquare";
 export default {
   components: {
     AppHeader,
     AppInput,
-    AppButton,
-    AppSquare
+    AppButton
   },
   data: () => ({
     search: "",
@@ -125,6 +123,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.assessment {
+  height: 100%;
+}
 .universe {
   position: fixed;
   top: 0;
@@ -132,18 +133,15 @@ export default {
   left: 0;
   right: 0;
 }
-.assessment {
-  height: 100%;
-}
 .configuration {
   position: relative;
-  padding-top: $content-padding;
-  padding-left: $content-padding;
-  width: 45%;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  height: 100%;
+  margin-top: $margin-top;
+  margin-left: $margin-left;
+  width: 40%;
+  height: calc(100vh - #{$margin-top});
 }
 .form {
   display: flex;
@@ -190,13 +188,14 @@ export default {
   align-self: flex-end;
 }
 .no-symbols-selected {
+  border: 1px solid $white-opacity;
   min-height: 540px;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 38px;
+  margin-top: 40px;
   .warning-message {
     margin-top: 30px;
   }

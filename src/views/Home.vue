@@ -10,7 +10,7 @@
             <span class="epic-buttet-text">{{ bullet }}</span>
           </li>
         </ul>
-        <app-button :to="epic.buttonTo" :text="epic.buttonText" :disabled="epic.disabled" />
+        <app-button :to="epic.buttonTo" :text="epic.buttonText" />
       </div>
     </div>
   </section>
@@ -37,8 +37,7 @@ export default {
           desc: "Contrata un producto a tu medida en sólo unos minutos.",
           bullets: ["Escoge tus preferencias", "Indica tu inversión", "Compara con nuestra propuesta"],
           buttonText: "Nueva propuesta de cartera",
-          buttonTo: { name: "proposal" },
-          disabled: true
+          buttonTo: { name: "proposal" }
         }
       ];
     }
@@ -48,16 +47,14 @@ export default {
 
 <style lang="scss" scoped>
 .home {
-  padding-left: 120px;
-  width: 55% !important;
-  height: 100% !important;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  width: 55%;
+  margin-left: 10%;
 }
 .epics {
   display: flex;
-  padding-bottom: 80px;
 }
 .epic {
   width: 50%;
